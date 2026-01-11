@@ -1,71 +1,96 @@
-
-@media screen and (max-width: 768px) {
-
-
-    :root {
-        --container-width: 100%; 
-    }
-
     html, body {
-        min-width: 0 !important; 
-        overflow-x: hidden; 
-        padding-top: 0; 
+        font-size: 15px; 
     }
 
-    #header {
-        position: relative;
-        height: auto;
-        min-width: 100%;
+    input[type=text], 
+    input[type=search], 
+    input[type=password], 
+    select, 
+    textarea {
+        font-size: 16px !important;
+        height: 45px; 
+        margin-bottom: 10px;
+        width: 100%; 
+        padding: 8px;
+    }
+
+    #menu ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 5px;
     }
     
-    #logo, #userinfo, #searchbars, #menu {
-        position: static;
-        width: 100%;
-        text-align: center;
-        float: none;
-    }
-    
-    #menu li {
-        float: none;
+    #menu li a {
         display: inline-block;
-        margin: 5px;
+        padding: 10px 15px; 
+        margin: 2px;
+        background-color: rgba(255,255,255,0.1);
+        border-radius: 4px;
+        font-size: 14px;
     }
 
-    #content {
-        width: 100%;
+    .cat_list { 
+        display: flex; 
+        flex-wrap: wrap; 
+        gap: 8px; 
+    }
+
+    .cat_list a {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #333; 
+        color: #ddd;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 14px;
+        border: 1px solid #555;
+    }
+
+    input[type=checkbox] + label, 
+    input[type=radio] + label {
         padding: 10px;
+        display: inline-block;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+    
+    input[type=checkbox] {
+        transform: scale(1.5); 
+        margin-right: 5px;
+    }
+
+
+    .torrent_table thead {
+        display: none;
+    }
+
+    .torrent_table tr {
         display: flex;
         flex-direction: column;
+        background-color: rgba(255,255,255,0.05);
+        margin-bottom: 15px;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
     }
 
-    #content .main_column, 
-    #content .sidebar {
-        width: 100%;
-        float: none;
-        margin-bottom: 20px;
-    }
-
-    #content .sidebar {
-        order: 2; 
-    }
-    
-    #content .main_column {
-        order: 1;
-    }
-
-    .table_container_responsive, 
-    .torrent_table, 
-    table {
+    .torrent_table td {
         display: block;
-        width: 100%;
-        overflow-x: auto;
-        white-space: nowrap; 
+        padding: 5px 0;
+        text-align: left !important;
+        border: none;
     }
 
-
-    #footer {
-        position: static;
+    .torrent_table td img {
+        width: 100px;
         height: auto;
-        padding: 20px;
+        display: block;
+        margin: 0 auto 10px auto;
     }
-}
+    .torrent_table a[href*="torrents.php?id"] {
+        font-size: 18px;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
