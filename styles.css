@@ -1,0 +1,71 @@
+
+@media screen and (max-width: 768px) {
+
+
+    :root {
+        --container-width: 100%; 
+    }
+
+    html, body {
+        min-width: 0 !important; 
+        overflow-x: hidden; 
+        padding-top: 0; 
+    }
+
+    #header {
+        position: relative;
+        height: auto;
+        min-width: 100%;
+    }
+    
+    #logo, #userinfo, #searchbars, #menu {
+        position: static;
+        width: 100%;
+        text-align: center;
+        float: none;
+    }
+    
+    #menu li {
+        float: none;
+        display: inline-block;
+        margin: 5px;
+    }
+
+    #content {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #content .main_column, 
+    #content .sidebar {
+        width: 100%;
+        float: none;
+        margin-bottom: 20px;
+    }
+
+    #content .sidebar {
+        order: 2; 
+    }
+    
+    #content .main_column {
+        order: 1;
+    }
+
+    .table_container_responsive, 
+    .torrent_table, 
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap; 
+    }
+
+
+    #footer {
+        position: static;
+        height: auto;
+        padding: 20px;
+    }
+}
