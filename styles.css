@@ -1,3 +1,182 @@
+:root {
+    --container-width: 1130px;
+    --font-family: system-ui, -apple-system, "BlinkMacSystemFont", "Segoe UI", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    --table-background-color: transparent;
+}
+
+@media screen and (prefers-color-scheme:light) {
+    :root {
+        --background-color: #fff;
+        --border-color: #c4c4c4;
+        --text-color: #000;
+        --link-color: #597e91;
+        --header-background-color: hsla(0, 0%, 90%, .5);
+        --header-main-background-color: hsla(0, 0%, 80%, .5);
+        --header-link-hover-background-color: hsla(0, 0%, 85%, .5);
+        --input-background-color: #f3f3f3;
+    }
+}
+
+@media screen and (prefers-color-scheme:dark) {
+    :root {
+        --background-color: #222;
+        --border-color: #555;
+        --text-color: #a9a9a9;
+        --link-color: #3b8eac;
+        --header-background-color: rgba(53, 53, 53, .5);
+        --header-main-background-color: rgba(31, 31, 31, .5);
+        --header-link-hover-background-color: rgba(80, 80, 80, .5);
+        --input-background-color: #383838;
+    }
+}
+
+:root {
+    --input-border-color: var(--border-color);
+    --header-link-color: var(--link-color);
+    --table-row-background-color: var(--header-background-color);
+    --table-header-background-color: var(--header-background-color);
+    --table-border-color: var(--border-color);
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    line-height: 1.15;
+    font-family: var(--font-family);
+    font-size: 13px;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    color: var(--text-color);
+    min-width: var(--container-width);
+    padding: 0;
+    --footer-height: 130px;
+    background-color: var(--background-color);
+    margin-bottom: var(--footer-height);
+    padding-top: 96px;
+}
+
+body#index {
+    --footer-height: 240px;
+}
+
+main { display: block; }
+h1 { font-size: 2em; margin: .67em 0; }
+hr { box-sizing: content-box; height: 0; overflow: visible; }
+pre, code, kbd, samp { font-family: monospace, monospace; font-size: 1em; }
+a { background-color: transparent; border: 0; color: var(--link-color); display: inline-block; font-size: inherit; font-weight: inherit; line-height: inherit; text-decoration: none; }
+a:active, a:focus, a:focus-visible, a:hover { filter: brightness(1.1); outline: none; text-decoration: underline; }
+b, strong { font-weight: bolder; }
+small { font-size: 80%; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sub { bottom: -.25em; }
+sup { top: -.5em; }
+img { border-style: none; }
+
+button, input, optgroup, select, textarea { font-family: inherit; font-size: 100%; line-height: 1.15; margin: 0; }
+button, input { overflow: visible; }
+button, select { text-transform: none; }
+textarea { overflow: auto; }
+
+input[type=button], input[type=email], input[type=password], input[type=submit], input[type=text], select, textarea {
+    background-color: var(--input-background-color);
+    border: 1px solid var(--input-border-color);
+    border-radius: 3px;
+    color: inherit;
+    font-size: inherit;
+    line-height: 1.2em;
+}
+
+input[type=email], input[type=password], input[type=text], select, textarea { padding: 2px 8px; }
+input[type=button], input[type=submit] { padding: 2px 10px; cursor: pointer; }
+
+input[type=checkbox]+label, input[type=radio]+label { color: var(--link-color); cursor: pointer; }
+
+blockquote, pre {
+    background-color: hsla(0, 0%, 57%, .1);
+    color: inherit !important;
+    margin: 0;
+    padding: 8px 0 8px 10px;
+}
+blockquote { border-left: 5px solid var(--border-color); }
+
+table { border-collapse: collapse; position: relative; width: 100%; }
+table td { font-weight: inherit; line-height: 1.4em; padding: 7px 4px; }
+table [class*=torrent] td, table [class^=colhead] td, table [class^=row] td { border-bottom: 1px solid var(--table-border-color); }
+table [class^=colhead] td {
+    backdrop-filter: blur(1.5rem);
+    background-color: var(--table-header-background-color);
+    position: sticky;
+    top: 99px;
+    font-weight: 600;
+}
+table .rowa td { background-color: var(--table-row-background-color); }
+
+#header {
+    backdrop-filter: blur(1.5rem);
+    background-color: var(--header-background-color);
+    left: 0;
+    min-width: var(--container-width);
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
+}
+#header a { color: var(--header-link-color); }
+#logo { left: 0; padding: 6px 5px; position: absolute; top: 24px; }
+#logo a {
+    background: url(logo.png) no-repeat;
+    background-size: 307px 60px;
+    display: block;
+    height: 60px;
+    width: 307px;
+}
+#header ul { float: right; list-style: none; margin: 0; padding: 0; }
+#header li { float: left; line-height: 2em; }
+
+#searchbars, #userinfo { background: var(--header-main-background-color); }
+#menu, #searchbars, #userinfo { border-bottom: 1px solid var(--border-color); width: 100%; }
+#menu:after, #searchbars:after, #userinfo:after, #content:after, #footer:after, #header:after { clear: both; content: ""; display: table; }
+#menu a:link { padding: 6px 13px; }
+#menu a:hover { background-color: var(--header-link-hover-background-color); }
+
+#content {
+    background-color: var(--background-color);
+    margin: 0 auto;
+    padding: 0 20px 20px;
+    position: relative;
+    width: var(--container-width);
+    z-index: 2;
+}
+#content .sidebar { float: right; width: 30%; }
+#content .main_column { width: 70%; }
+
+.linkbox { padding: 10px 15px; font-weight: 600; }
+.hidden, .hide { display: none; }
+.nobr { white-space: nowrap; }
+
+.filter_torrents { padding-top: 10px; }
+.filter_torrents .cat_list { border-top: 1px solid var(--border-color); margin-top: 10px; }
+.torrent_table { margin-left: .5px; }
+.torrent_table tr { vertical-align: top; }
+.torrent_table [class*=_redline] td { background-color: rgba(255, 0, 0, .2); border-color: #e78d8d; }
+@media screen and (prefers-color-scheme:dark) {
+    .torrent_table [class*=_redline] td { background-color: rgba(255, 50, 50, .15); border-color: #6a2222; }
+}
+
+#footer {
+    background: var(--header-background-color);
+    bottom: 0;
+    height: var(--footer-height);
+    left: 0;
+    padding: 15px 3rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+#footer p { color: #666; font-size: 11px; margin: 7px 0; text-align: center; }
+
 @media screen and (max-width: 768px) {
     :root {
         --container-width: 100%;
@@ -7,7 +186,7 @@
         min-width: 0 !important;
         overflow-x: hidden;
         padding-top: 0;
-        font-size: 20px !important;
+        font-size: 15px !important;
     }
 
     #header {
@@ -18,7 +197,7 @@
     
     #logo, #userinfo, #searchbars, #menu {
         position: static;
-        width: 150%;
+        width: 100%;
         text-align: center;
         float: none;
     }
@@ -72,11 +251,11 @@
     
     table td {
         padding: 12px 8px !important;
-        font-size: 18px;
+        font-size: 14px;
     }
 
     input[type=text], input[type=search], select, input[type=password] {
-        font-size: 20px !important;
+        font-size: 16px !important;
         height: 45px !important;
         width: 95%;
         margin: 5px auto;
@@ -103,6 +282,6 @@
         position: static;
         height: auto;
         padding: 20px;
-        font-size: 14px;
+        font-size: 12px;
     }
 }
