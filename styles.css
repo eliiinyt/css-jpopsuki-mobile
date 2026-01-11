@@ -7,7 +7,7 @@
         min-width: 0 !important;
         overflow-x: hidden;
         padding-top: 0;
-        font-size: 15px !important;
+        font-size: 20px !important;
     }
 
     #header {
@@ -18,7 +18,7 @@
     
     #logo, #userinfo, #searchbars, #menu {
         position: static;
-        width: 100%;
+        width: 150%;
         text-align: center;
         float: none;
     }
@@ -72,11 +72,11 @@
     
     table td {
         padding: 12px 8px !important;
-        font-size: 14px;
+        font-size: 18px;
     }
 
     input[type=text], input[type=search], select, input[type=password] {
-        font-size: 16px !important;
+        font-size: 20px !important;
         height: 45px !important;
         width: 95%;
         margin: 5px auto;
@@ -103,6 +103,6 @@
         position: static;
         height: auto;
         padding: 20px;
-        font-size: 12px;
+        font-size: 14px;
     }
 }
